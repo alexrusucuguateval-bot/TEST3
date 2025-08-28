@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>L'AUF et la DRECO à travers des dossiers thématiques</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      padding: 2em;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 1.5em;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1em;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 1.5em;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+    }
+
+    .card a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #0077cc;
+      display: block;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 2em;
+      border-radius: 10px;
+      width: 60%;
+      max-width: 600px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      position: relative;
+    }
+
+    .close {
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      font-size: 28px;
+      font-weight: bold;
+      color: #aaa;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: black;
+    }
+
+    iframe {
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>L'AUF et la DRECO à travers des dossiers thématiques</h1>
+
+  <div class="grid">
+    <div class="card" onclick="document.getElementById('modal').style.display='block'">
+      <span><strong>Détails techniques</strong></span>
+    </div>
+    <div class="card"><a href="DOSSIER_1_AUF_MONDE/DOSSIER_1_AUF_MONDE.html" target="_blank">AUF dans le monde scientifique</a></div>
+    <div class="card"><a href="DOSSIER_2_UCRAINE/DOSSIER_2_UCRAINE.html" target="_blank">Anatomie d'une guerre à l'intérieur de la DRECO - Ukraine</a></div>
+    <div class="card"><a href="DOSSIER_3_ERASMUS/DOSSIER_3_ERASMUS.html" target="_blank">Mobilités académique - le cas des flux ERASMUS</a></div>
+    <div class="card"><a href="DOSSIER_4_BECO_AFRIQUE/DOSSIER_4_BECO_AFRIQUE.html" target="_blank">Mobilités académiques vers la DRECO - les boursiers Eugène Ionesco</a></div>
+    <div class="card"><a href="DOSSIER_5_FLE_ROU_V2/DOSSIER_5_FLE_ROU_V2.html" target="_blank">FLE en Roumanie - bassins de recrutement des universités</a></div>
+    <div class="card"><a href="DOSSIER_6_OFFRE_ROU/DOSSIER_6_OFFRE_ROU.html" target="_blank">L'offre francophone des universités roumaines</a></div>
+    <div class="card"><a href="DOSSIER_7_RESEAUX_AUF/DOSSIER_7_RESEAUX_AUF.html" target="_blank">Les réseaux de l'AUF - une illustration cartographique</a></div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="document.getElementById('modal').style.display='none'">&times;</span>
+      <h2>Détails techniques</h2>
+      <p>
+        La série de dossiers thématiques proposée a comme but une mise en contexte de la Direction Régionale Europe Centrale et Orientale de l’AUF, contexte qui se décline sur des paliers multiples: scientifique et recherche, mobilités académiques et situation géopolitique. Là où le sujet le permet, l’échelle spatiale de cet exercice dépasse les limites de territoire de la DRECO, facilitant les comparaisons et les analyses de type multi-scalaire. L’instrument de visualisation est le résultat d’une somme de décisions techniques que les diverses contraintes d’ordre visuel et d’accès aux données ont systématiquement marqué. Chaque dossier contient des produits cartographiques dérivés à partir d’un utilitaire spécialisé (QGIS2WEB) du logiciel SIG QGIS. Les limitations de ce logiciel ont piloté les choix des habillages cartographiques, l’étiquetage des indicateurs, les symboles utilisés, les gammes des couleurs etc. Dans le cadre d’un dossier, deux rubriques d’informations sont disponibles aux utilisateurs: les détails techniques et le commentaire introductif des cartes disponibles. Les deux couvrent des éléments essentiels pour l’analyse - sources de données et des géométries, le repérage des principales structures spatiales et les divers enjeux concernant la DRECO.
+      </p>
+    </div>
+  </div>
+
+  <!-- Map -->
+  <iframe 
+    width="100%" 
+    height="500px" 
+    src="https://studio.foursquare.com/map/public/8cd85d8e-6a24-4f8a-b2dd-3ab1d449a65f/embed" 
+    frameborder="0" 
+    allowfullscreen 
+    style="margin-top: 12px;">
+  </iframe>
+
+  <script>
+    // Close modal when clicking outside of it
+    window.onclick = function(event) {
+      const modal = document.getElementById('modal');
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
